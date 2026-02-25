@@ -427,3 +427,107 @@
     border-top: 1px solid var(--border);
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   Tutor Screen additions (layout reuses .game-layout / .board-area / .side-panel)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* "Tutor Mode" button on start screen */
+.btn-warn {
+  background: rgba(255,167,38,0.18);
+  color: var(--warn);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius-sm);
+  min-height: var(--touch);
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+}
+.btn-warn:hover { background: rgba(255,167,38,0.28); }
+
+/* Status row inside the tutor panel */
+.tutor-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 28px;
+}
+
+/* Quality badge pill */
+.tutor-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.tutor-badge-best        { background: rgba( 76,175, 80,0.25); color: #81C784; }
+.tutor-badge-good        { background: rgba( 76,175, 80,0.18); color: #A5D6A7; }
+.tutor-badge-inaccuracy  { background: rgba(255,167, 38,0.25); color: #FFB74D; }
+.tutor-badge-mistake     { background: rgba(229, 57, 53,0.25); color: #EF9A9A; }
+.tutor-badge-blunder     { background: rgba(229, 57, 53,0.45); color: #FF5252; }
+.tutor-badge-ai          { background: rgba( 33,150,243,0.22); color: #90CAF9; }
+
+/* Spinner */
+.tutor-spinner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+.t-spin-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  border-top-color: transparent;
+  animation: t-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes t-spin { to { transform: rotate(360deg); } }
+
+/* Message area */
+.tutor-message-area {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tutor-headline {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  min-height: 20px;
+}
+
+.tutor-detail {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+/* Action buttons */
+.tutor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tutor-panel .btn-primary,
+.tutor-panel .btn-warn,
+.tutor-panel .btn-secondary {
+  width: 100%;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+}

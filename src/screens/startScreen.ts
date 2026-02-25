@@ -27,6 +27,9 @@ export function startScreen(root: HTMLElement): () => void {
 
       <div class="start-actions">
         <button class="btn-primary" id="start-btn">▶&nbsp; Start Game</button>
+        <button class="btn-secondary" id="tutor-btn" style="background:#1565C0;color:#fff;">
+          🎓&nbsp; Tutor Mode
+        </button>
         <button class="btn-secondary" id="learn-btn" style="background:#27AE60;color:#000;">
           📚&nbsp; Learn Chess
         </button>
@@ -65,6 +68,10 @@ export function startScreen(root: HTMLElement): () => void {
 
   root.querySelector('#start-btn')!.addEventListener('click', () => {
     navigate({ to: 'game', params: { playerColor, difficulty } });
+  });
+
+  root.querySelector('#tutor-btn')!.addEventListener('click', () => {
+    navigate({ to: 'tutor', params: { playerColor } });
   });
 
   root.querySelector('#learn-btn')!.addEventListener('click', () => {
