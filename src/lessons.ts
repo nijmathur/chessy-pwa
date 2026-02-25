@@ -268,4 +268,298 @@ export const LESSONS: Lesson[] = [
       { fen: '3q3k/8/8/8/3N4/8/8/3R1K2 w - - 0 1', focus: 'd4', answer: 'd4e6' },
     ],
   },
+
+  // ── Opening Strategy ────────────────────────────────────────────────────────
+  {
+    category: 'Opening Strategy', icon: '🎯',
+    title: 'Control the Center',
+    fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
+    focus: 'e4', kind: 'explore',
+    desc: "The center — squares d4, d5, e4, e5 — is the most important part of\n" +
+          "the board. Pieces placed in or near the center control more squares\n" +
+          "and have more options than pieces stuck on the edge.\n\n" +
+          "  • Open with 1.e4 or 1.d4 to stake a claim in the center.\n" +
+          "  • Central pawns give your pieces room to develop and attack.\n" +
+          "  • A strong center restricts your opponent's pieces.\n\n" +
+          "White has played 1.e4 — one of the most popular first moves in chess.\n" +
+          "The pawn on e4 controls d5 and f5, and opens lines for the bishop\n" +
+          "and queen. Click the pawn to see its reach!",
+  },
+  {
+    category: 'Opening Strategy', icon: '⚡',
+    title: 'Develop Your Pieces',
+    fen: 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3',
+    focus: 'f3', kind: 'explore',
+    desc: "Development means getting your pieces off the back rank and into\n" +
+          "active positions early in the game. Every move that brings a new\n" +
+          "piece into play is a good opening move.\n\n" +
+          "Golden development rules:\n" +
+          "  • Develop knights before bishops (knights have fewer good squares).\n" +
+          "  • Don't move the same piece twice before all pieces are developed.\n" +
+          "  • Don't bring your queen out too early — she'll be chased away,\n" +
+          "    wasting tempo.\n" +
+          "  • Aim to castle within the first 10 moves.\n\n" +
+          "After 1.e4 e5 2.Nf3 Nc6, both sides have developed a knight and\n" +
+          "fought for the center. White's knight on f3 attacks e5 and controls\n" +
+          "key central squares. Click it to see its reach.",
+  },
+  {
+    category: 'Opening Strategy', icon: '🛡',
+    title: 'Castle for King Safety',
+    fen: 'r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 2 5',
+    focus: 'e1', kind: 'explore',
+    desc: "The king is vulnerable in the center — open files and diagonals make\n" +
+          "it an easy target during the middlegame. Castling solves both problems\n" +
+          "in a single move.\n\n" +
+          "Why castle early?\n" +
+          "  • Tucks the king safely behind a wall of pawns.\n" +
+          "  • Connects your rooks so they can work together.\n" +
+          "  • Brings the rook toward the center where it's most active.\n\n" +
+          "Castling rules to remember:\n" +
+          "  • Neither the king nor the chosen rook may have moved before.\n" +
+          "  • No pieces can stand between them.\n" +
+          "  • The king cannot be in check, pass through, or land on an\n" +
+          "    attacked square.\n\n" +
+          "White's king on e1 is still exposed — click g1 to see where it\n" +
+          "would go after kingside castling.",
+  },
+  {
+    category: 'Opening Strategy', icon: '♞',
+    title: 'The Italian Game',
+    fen: 'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
+    focus: 'c4', kind: 'explore',
+    desc: "The Italian Game (1.e4 e5 2.Nf3 Nc6 3.Bc4) is one of the oldest and\n" +
+          "most popular openings — it has been played for over 500 years!\n\n" +
+          "Why it works:\n" +
+          "  • White controls the center with a pawn and a knight.\n" +
+          "  • The bishop on c4 targets the weak f7 square (defended only by\n" +
+          "    the black king).\n" +
+          "  • White is ready to castle kingside next move.\n" +
+          "  • Every piece developed so far has a clear purpose.\n\n" +
+          "From c4, the bishop eyes f7 diagonally and is well placed for\n" +
+          "middlegame play. Click it to see all the squares it controls.\n\n" +
+          "Best reply for Black: 3…Bc5 (Giuoco Piano) or 3…Nf6 (Two Knights).",
+  },
+  {
+    category: 'Opening Strategy', icon: '♟',
+    title: "The Queen's Gambit",
+    fen: 'rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2',
+    focus: 'c4', kind: 'explore',
+    desc: "The Queen's Gambit (1.d4 d5 2.c4) is the most famous opening in\n" +
+          "chess and has been played at the top level for over 200 years.\n\n" +
+          "The idea:\n" +
+          "  • White offers a pawn (c4) to lure Black's d5 pawn away from\n" +
+          "    the center.\n" +
+          "  • If Black captures (2…dxc4), White gets a strong center with\n" +
+          "    an unopposed d4 pawn and can recapture later.\n" +
+          "  • If Black declines (2…e6 or 2…c6), White keeps central pressure.\n\n" +
+          "Key plans for White:\n" +
+          "  • Develop bishops and knights rapidly.\n" +
+          "  • Aim for e2-e4 to establish a full pawn center.\n" +
+          "  • Use the c-file once the c-pawn moves.\n\n" +
+          "Click the c4 pawn to see how it challenges Black's center.",
+  },
+
+  // ── Middlegame Strategy ─────────────────────────────────────────────────────
+  {
+    category: 'Middlegame Strategy', icon: '🏇',
+    title: 'Outpost Squares',
+    fen: 'r2qr1k1/pp3ppp/2p2n2/3N4/3PP3/2N5/PP3PPP/R1BQR1K1 w - - 0 1',
+    focus: 'd5', kind: 'explore',
+    desc: "An outpost is a square that cannot be attacked by any enemy pawn.\n" +
+          "A piece — especially a knight — planted on an outpost becomes\n" +
+          "an immovable thorn in your opponent's position.\n\n" +
+          "Why outposts matter:\n" +
+          "  • A knight on d5 or e5 controls huge amounts of space.\n" +
+          "  • The opponent cannot use pawns to drive it away.\n" +
+          "  • From d5 a knight attacks c7, e7, b4, f4, b6, and f6 — six squares!\n\n" +
+          "How to create an outpost:\n" +
+          "  • Advance a pawn to eliminate the enemy pawn that would normally\n" +
+          "    guard the target square (e.g. trade away the c-pawn to remove\n" +
+          "    the guard of d5).\n" +
+          "  • Then manoeuvre your knight to that square.\n\n" +
+          "The white knight on d5 is a model outpost — click it to see its reach.",
+  },
+  {
+    category: 'Middlegame Strategy', icon: '🗡',
+    title: 'Open Files & Rooks',
+    fen: 'r4rk1/pp3ppp/2p3b1/3p4/3P4/2PB2B1/PP3PPP/R3R1K1 w - - 0 1',
+    focus: 'e1', kind: 'explore',
+    desc: "Rooks are powerful on open files — files with no pawns blocking them.\n" +
+          "A rook on an open file controls every square along that file and can\n" +
+          "invade deep into enemy territory.\n\n" +
+          "Key rook principles:\n" +
+          "  • Place rooks on open or half-open files (only one side's pawn missing).\n" +
+          "  • Double your rooks on the same open file — they support each other.\n" +
+          "  • Rooks belong on the 7th rank in the endgame (attacking pawns\n" +
+          "    still on their starting squares).\n" +
+          "  • Connect your rooks by castling and clearing the back rank.\n\n" +
+          "The Tarrasch Rule: 'Rooks belong behind passed pawns' — your own\n" +
+          "to help push them, the opponent's to slow them down.\n\n" +
+          "The white rook on e1 controls the open e-file. Click it to see its power.",
+  },
+  {
+    category: 'Middlegame Strategy', icon: '⚠',
+    title: 'Weak Squares & Holes',
+    fen: 'r1bqr1k1/pp3ppp/2pp1n2/4p3/4P3/2NP1N2/PPP2PPP/R1BQR1K1 w - - 0 1',
+    focus: 'd5', kind: 'explore',
+    desc: "A 'hole' or weak square is one that can never again be defended\n" +
+          "by a pawn. Once a square becomes a hole, enemy pieces can occupy\n" +
+          "it permanently.\n\n" +
+          "How holes are created:\n" +
+          "  • When you advance a pawn, it can no longer guard the squares\n" +
+          "    it left behind.\n" +
+          "  • If you push both the c-pawn and e-pawn, the d5 square becomes\n" +
+          "    a permanent hole — no pawn can ever attack it again.\n\n" +
+          "How to exploit holes:\n" +
+          "  • Plant a knight on the hole — it cannot be driven away by pawns.\n" +
+          "  • Use the hole as a base for launching attacks.\n\n" +
+          "How to avoid creating holes:\n" +
+          "  • Think carefully before advancing flank pawns.\n" +
+          "  • Don't push pawns that leave important squares undefended.\n\n" +
+          "The d5 square here is a hole for Black — no Black pawn can attack it.\n" +
+          "White's knight would love to settle there permanently.",
+  },
+  {
+    category: 'Middlegame Strategy', icon: '🔄',
+    title: 'Piece Activity',
+    fen: 'r1bqr1k1/1p3ppp/p1pp1n2/4p3/2B1P3/2N2N2/PPP2PPP/R1BQR1K1 w - - 0 1',
+    focus: 'c4', kind: 'explore',
+    desc: "Active pieces control more squares, create more threats, and win games.\n" +
+          "A passive piece does nothing useful and is effectively fighting at a\n" +
+          "disadvantage.\n\n" +
+          "Ask yourself every move:\n" +
+          "  • Which of my pieces is worst placed? How can I improve it?\n" +
+          "  • Does this move put my piece on a square where it has future?\n" +
+          "  • Am I creating threats, or just reacting to my opponent's?\n\n" +
+          "Signs of passive pieces:\n" +
+          "  • Pieces stuck behind your own pawns (especially the 'bad bishop').\n" +
+          "  • Knights on the edge of the board ('a knight on the rim is dim').\n" +
+          "  • Rooks with no open file to use.\n\n" +
+          "Signs of active pieces:\n" +
+          "  • Knights on central outposts.\n" +
+          "  • Bishops on long open diagonals.\n" +
+          "  • Rooks on open files or the 7th rank.\n\n" +
+          "Click the bishop on c4 — it sits on an active diagonal aimed at f7.",
+  },
+  {
+    category: 'Middlegame Strategy', icon: '♟',
+    title: 'Pawn Structure',
+    fen: 'r1bqr1k1/pp3ppp/2p5/3p4/3P4/2PB4/PP3PPP/R1BQR1K1 w - - 0 1',
+    focus: 'd4', kind: 'explore',
+    desc: "Pawns cannot move backward — every pawn move is permanent. Your\n" +
+          "pawn structure shapes the entire game and determines which plans\n" +
+          "are available to each side.\n\n" +
+          "Key pawn structure concepts:\n" +
+          "  • Passed pawn: no enemy pawn can block or capture it. Must be\n" +
+          "    pushed — it's a potential queen!\n" +
+          "  • Doubled pawns: two pawns on the same file. They can't protect\n" +
+          "    each other and block one another.\n" +
+          "  • Isolated pawn: no friendly pawns on adjacent files. Hard to\n" +
+          "    defend because no pawn can guard it.\n" +
+          "  • Backward pawn: can't advance because a pawn beside it hasn't\n" +
+          "    advanced, leaving it vulnerable on its current square.\n" +
+          "  • Pawn chain: pawns protecting each other diagonally. Attack\n" +
+          "    the base of the chain to undermine it.\n\n" +
+          "Think of your pawn structure as your long-term strategy — it tells\n" +
+          "you where to put your pieces and what plans to follow.",
+  },
+
+  // ── Endgame Strategy ────────────────────────────────────────────────────────
+  {
+    category: 'Endgame Strategy', icon: '👑',
+    title: 'Activate Your King',
+    fen: '8/5pk1/6p1/5P2/8/6K1/8/8 w - - 0 1',
+    focus: 'g3', kind: 'explore',
+    desc: "In the middlegame the king hides. In the endgame the king fights!\n\n" +
+          "Once most pieces are traded off, the king becomes a powerful piece.\n" +
+          "You must march it toward the center to support your pawns and\n" +
+          "attack the opponent's.\n\n" +
+          "Key endgame king principles:\n" +
+          "  • Centralise your king as soon as queens come off the board.\n" +
+          "  • The king on e4 or d4 controls 8 squares and participates actively.\n" +
+          "  • Use your king to escort passed pawns to promotion.\n" +
+          "  • A king on the 6th rank in a pawn endgame is very powerful.\n\n" +
+          "Common mistake: keeping the king passive on g1/g8 when pawns\n" +
+          "are the only material left. The player who activates their king\n" +
+          "first usually wins.\n\n" +
+          "In this position, White's king on g3 needs to march toward the\n" +
+          "center. Click it to see where it can go.",
+  },
+  {
+    category: 'Endgame Strategy', icon: '⚔',
+    title: 'The Opposition',
+    fen: '8/8/8/4k3/8/4K3/8/8 w - - 0 1',
+    focus: 'e3', kind: 'explore',
+    desc: "The opposition is one of the most important concepts in king-and-pawn\n" +
+          "endgames. Two kings are 'in opposition' when they face each other\n" +
+          "with exactly one square between them.\n\n" +
+          "  • The player who does NOT have to move has the opposition — a\n" +
+          "    key positional advantage.\n" +
+          "  • The player TO move must give ground, because stepping next to\n" +
+          "    the enemy king is illegal.\n\n" +
+          "Types of opposition:\n" +
+          "  • Direct opposition: kings face each other on the same file or rank\n" +
+          "    with one square between them.\n" +
+          "  • Distant opposition: same idea but further apart (always an even\n" +
+          "    number of squares between them).\n\n" +
+          "Here the kings are on e3 and e5, two squares apart on the e-file.\n" +
+          "It is White's turn — Black has the opposition. White must step aside.\n" +
+          "Click the white king to see its limited options.",
+  },
+  {
+    category: 'Endgame Strategy', icon: '🚀',
+    title: 'Advance the Passed Pawn',
+    kind: 'task',
+    desc: "A passed pawn is a pawn with no enemy pawns in front of it on its\n" +
+          "own file or the adjacent files. It can advance all the way to\n" +
+          "promotion if left unopposed.\n\n" +
+          "  • 'A passed pawn must be pushed!' — Nimzowitsch\n" +
+          "  • Use your king to escort it — walk beside or in front of it.\n" +
+          "  • The opponent must use their king to stop it, tying them down.\n\n" +
+          "In this position White has a powerful passed pawn on e5 and the\n" +
+          "Black king is far away on b6. Advance the pawn to increase the\n" +
+          "threat and march toward queening!",
+    variants: [
+      { fen: '8/8/1k6/4P3/1K6/8/8/8 w - - 0 1', focus: 'e5', answer: 'e5e6' },
+    ],
+  },
+  {
+    category: 'Endgame Strategy', icon: '♜',
+    title: 'Rook Behind the Passed Pawn',
+    fen: '8/8/1k6/8/4P3/8/1K6/4R3 w - - 0 1',
+    focus: 'e1', kind: 'explore',
+    desc: "Tarrasch's Rule: 'Rooks belong behind passed pawns.'\n\n" +
+          "This applies to both your own passed pawns and your opponent's:\n\n" +
+          "  • Your own passed pawn: put your rook behind it. As the pawn\n" +
+          "    advances, the rook's scope increases — it guards every square\n" +
+          "    the pawn has left behind.\n" +
+          "  • Enemy passed pawn: put your rook behind it. The rook attacks\n" +
+          "    the pawn from the rear and becomes more active as the pawn moves.\n\n" +
+          "Why this matters:\n" +
+          "  • A rook in FRONT of a passed pawn is blocked by it.\n" +
+          "  • A rook to the SIDE of a passed pawn loses effectiveness as the\n" +
+          "    pawn advances and blocks the file.\n" +
+          "  • A rook BEHIND a passed pawn gains power with every advance.\n\n" +
+          "Here White's rook on e1 is correctly placed behind the e4 pawn.\n" +
+          "Click the rook to see the entire e-file it commands.",
+  },
+  {
+    category: 'Endgame Strategy', icon: '🏆',
+    title: 'King & Pawn: Race to Queen',
+    kind: 'task',
+    desc: "King-and-pawn endgames are decided by tempo — every move counts.\n\n" +
+          "Key principles:\n" +
+          "  • Push your pawn early when the enemy king is far away.\n" +
+          "  • Use your king to escort the pawn when the enemy king is close.\n" +
+          "  • The 'rule of the square': if the enemy king cannot enter the\n" +
+          "    square in front of the pawn (drawn diagonally from pawn to\n" +
+          "    promotion square), the pawn will queen.\n\n" +
+          "In this position the Black king is on e1, far from the b-pawn.\n" +
+          "White's king is on b1 and the pawn is on b2. Advance the pawn\n" +
+          "two squares immediately — the Black king cannot catch it in time!",
+    variants: [
+      { fen: '8/8/8/8/8/8/1P6/1K2k3 w - - 0 1', focus: 'b2', answer: 'b2b4' },
+    ],
+  },
 ];
