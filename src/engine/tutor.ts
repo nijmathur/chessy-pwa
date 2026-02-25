@@ -93,7 +93,7 @@ export function analyzePlayerMove(
     diff <= 300 ? 'mistake'     :
                   'blunder';
 
-  const shouldCorrect = quality === 'mistake' || quality === 'blunder';
+  const shouldCorrect = quality === 'inaccuracy' || quality === 'mistake' || quality === 'blunder';
 
   // Inspect the move with chess.js
   const chess = new Chess(fenBefore);
@@ -158,18 +158,17 @@ export function analyzePlayerMove(
     blunder:    '✗✗ Blunder!',
   };
 
-  const pawnDiff = (diff / 100).toFixed(1);
   let assessment: string;
   if (quality === 'best') {
     assessment = 'This is the engine\'s top choice — excellent!';
   } else if (quality === 'good') {
     assessment = 'Strong play!';
   } else if (quality === 'inaccuracy') {
-    assessment = `There was a slightly better option (about ${pawnDiff} pawn${diff === 100 ? '' : 's'} stronger), but your move is still reasonable.`;
+    assessment = 'A slightly better move was available, but you\'re still in good shape. See if the stronger option makes sense to you.';
   } else if (quality === 'mistake') {
-    assessment = `This loses about ${pawnDiff} pawns of advantage. Let's see what was better.`;
+    assessment = 'This gives away some of your advantage — your opponent is now better off. Let\'s see what you should have played instead.';
   } else {
-    assessment = `This is a serious error — about ${pawnDiff} pawns lost. Let's look at the right move.`;
+    assessment = 'This is a serious error that shifts the game in your opponent\'s favor. Let\'s look at what you should have played.';
   }
 
   const tip = !isMate ? openingTip(chess, moveObj, playerColor) : null;

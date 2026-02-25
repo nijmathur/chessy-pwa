@@ -220,7 +220,11 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
     headlineEl.textContent = analysis.headline;
     detailEl.textContent   = analysis.detail;
 
-    if (analysis.betterUci) {
+    if (analysis.betterUci && analysis.quality === 'inaccuracy') {
+      // Inaccuracy: offer the option but don't force it
+      setButtons({ seeBetter: true, continue: true });
+    } else if (analysis.betterUci) {
+      // Mistake / blunder: show the better move before continuing
       setButtons({ seeBetter: true });
     } else {
       setButtons({ continue: true });
