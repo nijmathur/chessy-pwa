@@ -71,7 +71,7 @@ export function startScreen(root: HTMLElement): () => void {
   });
 
   root.querySelector('#tutor-btn')!.addEventListener('click', () => {
-    navigate({ to: 'tutor', params: { playerColor } });
+    navigate({ to: 'tutor-strategy' });
   });
 
   root.querySelector('#learn-btn')!.addEventListener('click', () => {

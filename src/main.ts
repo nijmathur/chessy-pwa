@@ -6,8 +6,9 @@ import { gameScreen, type GameParams } from './screens/gameScreen';
 import { lessonsScreen } from './screens/lessonsScreen';
 import { lessonScreen, type LessonParams } from './screens/lessonScreen';
 import { tutorScreen, type TutorParams } from './screens/tutorScreen';
+import { tutorStrategyScreen } from './screens/tutorStrategyScreen';
 
-export type ScreenName = 'start' | 'game' | 'lessons' | 'lesson' | 'tutor';
+export type ScreenName = 'start' | 'game' | 'lessons' | 'lesson' | 'tutor' | 'tutor-strategy';
 
 export interface NavEvent {
   to: ScreenName;
@@ -38,6 +39,9 @@ export function navigate(evt: NavEvent): void {
       break;
     case 'tutor':
       currentCleanup = tutorScreen(root, evt.params as TutorParams);
+      break;
+    case 'tutor-strategy':
+      currentCleanup = tutorStrategyScreen(root);
       break;
   }
 

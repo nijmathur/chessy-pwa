@@ -8,9 +8,11 @@ import {
   type PlayerMoveAnalysis,
   type MoveQuality,
 } from '../engine/tutor';
+import { STRATEGIES, type Strategy } from '../strategies';
 
 export interface TutorParams {
   playerColor: 'w' | 'b';
+  strategyId?: string;
 }
 
 type Phase =
@@ -28,6 +30,11 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
   const { playerColor } = params;
   const aiColor: 'w' | 'b' = playerColor === 'w' ? 'b' : 'w';
 
+  // Strategy (optional)
+  const strategy: Strategy | null = params.strategyId
+    ? (STRATEGIES.find(s => s.id === params.strategyId) ?? null)
+    : null;
+
   root.innerHTML = `
     <div class="game-layout">
       <div class="board-area">
@@ -39,6 +46,14 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
           <div class="tutor-badge hidden" id="t-badge"></div>
         </div>
         <div class="ai-lbl" id="t-ai-lbl"></div>
+
+        ${strategy ? `
+        <!-- Strategy tip banner -->
+        <div class="tutor-tip-banner" id="t-tip-banner">
+          <div class="tutor-tip-label">${strategy.icon} ${strategy.title}</div>
+          <div class="tutor-tip-text" id="t-tip-text"></div>
+        </div>` : ''}
+
         <hr class="sep">
 
         <!-- Spinner (analyzing / ai_thinking) -->
@@ -85,8 +100,19 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
   const canvas = root.querySelector('#tutor-canvas') as HTMLCanvasElement;
   const board  = new ChessBoard(canvas);
 
+  // ── Strategy tips ───────────────────────────────────────────────────────────
+  let tipIndex = 0;
+  const tips = strategy?.tips ?? [];
+
+  function advanceTip() {
+    if (!strategy || tips.length === 0) return;
+    const el = root.querySelector('#t-tip-text');
+    if (el) el.textContent = tips[tipIndex % tips.length];
+    tipIndex++;
+  }
+
   // ── Game state ──────────────────────────────────────────────────────────────
-  let chess         = new Chess();
+  let chess = strategy ? new Chess(strategy.thematicFen) : new Chess();
   let phase: Phase  = 'player_turn';
   let selected: string | null = null;
   let targets       = new Set<string>();
@@ -431,6 +457,7 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
   });
 
   function triggerAiMove() {
+    advanceTip();
     phase = 'ai_thinking';
     setBadge('');
     headlineEl.textContent = '';
@@ -448,7 +475,9 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
   // ── New game / menu ─────────────────────────────────────────────────────────
 
   function resetGame() {
-    chess = new Chess();
+    chess = strategy ? new Chess(strategy.thematicFen) : new Chess();
+    tipIndex = 0;
+    advanceTip();
     phase = 'player_turn';
     selected = null; targets = new Set();
     lastMoveFrom = lastMoveTo = null;
@@ -472,6 +501,7 @@ export function tutorScreen(root: HTMLElement, params: TutorParams): () => void 
   root.querySelector('#t-menu-btn')!.addEventListener('click', () => navigate({ to: 'start' }));
 
   // ── Initial render ──────────────────────────────────────────────────────────
+  advanceTip();
   render();
 
   if (chess.turn() === aiColor) triggerAiMove();
