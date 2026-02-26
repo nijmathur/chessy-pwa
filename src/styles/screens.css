@@ -531,3 +531,51 @@
   font-size: 14px;
   border-radius: var(--radius-sm);
 }
+
+/* ── Strategy tip banner (inside tutor panel) ───────────────────────────── */
+.tutor-tip-banner {
+  background: rgba(76, 175, 80, 0.10);
+  border: 1px solid rgba(76, 175, 80, 0.28);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 4px 0 2px;
+}
+
+.tutor-tip-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.tutor-tip-text {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── Tutor Strategy Selection Screen ───────────────────────────────────────
+   (reuses .lessons-screen layout — only small additions needed)
+   ────────────────────────────────────────────────────────────────────────── */
+.ts-free-row {
+  display: flex;
+  gap: 10px;
+  max-width: 340px;
+  width: 100%;
+  margin: 8px 0 4px;
+}
+
+.ts-free-btn {
+  flex: 1;
+  font-size: 14px;
+}
+
+/* Allow short-desc text to wrap inside strategy cards */
+.ts-short-desc {
+  white-space: normal;
+  line-height: 1.4;
+}
