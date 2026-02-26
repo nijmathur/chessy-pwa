@@ -273,7 +273,7 @@ export const LESSONS: Lesson[] = [
   {
     category: 'Opening Strategy', icon: '🎯',
     title: 'Control the Center',
-    fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1',
+    fen: 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR w - - 0 1',
     focus: 'e4', kind: 'explore',
     desc: "The center — squares d4, d5, e4, e5 — is the most important part of\n" +
           "the board. Pieces placed in or near the center control more squares\n" +
@@ -343,7 +343,7 @@ export const LESSONS: Lesson[] = [
   {
     category: 'Opening Strategy', icon: '♟',
     title: "The Queen's Gambit",
-    fen: 'rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2',
+    fen: 'rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR w - - 0 1',
     focus: 'c4', kind: 'explore',
     desc: "The Queen's Gambit (1.d4 d5 2.c4) is the most famous opening in\n" +
           "chess and has been played at the top level for over 200 years.\n\n" +
@@ -378,7 +378,8 @@ export const LESSONS: Lesson[] = [
           "    guard the target square (e.g. trade away the c-pawn to remove\n" +
           "    the guard of d5).\n" +
           "  • Then manoeuvre your knight to that square.\n\n" +
-          "The white knight on d5 is a model outpost — click it to see its reach.",
+          "The white knight on d5 is a model outpost — click it to see its reach.\n\n" +
+          "Notice: the knight on d5 attacks c7, e7, b4, f4, b6, and f6 all at once!",
   },
   {
     category: 'Middlegame Strategy', icon: '🗡',
@@ -402,7 +403,7 @@ export const LESSONS: Lesson[] = [
     category: 'Middlegame Strategy', icon: '⚠',
     title: 'Weak Squares & Holes',
     fen: 'r1bqr1k1/pp3ppp/2pp1n2/4p3/4P3/2NP1N2/PPP2PPP/R1BQR1K1 w - - 0 1',
-    focus: 'd5', kind: 'explore',
+    focus: 'c3', kind: 'explore',
     desc: "A 'hole' or weak square is one that can never again be defended\n" +
           "by a pawn. Once a square becomes a hole, enemy pieces can occupy\n" +
           "it permanently.\n\n" +
@@ -418,7 +419,8 @@ export const LESSONS: Lesson[] = [
           "  • Think carefully before advancing flank pawns.\n" +
           "  • Don't push pawns that leave important squares undefended.\n\n" +
           "The d5 square here is a hole for Black — no Black pawn can attack it.\n" +
-          "White's knight would love to settle there permanently.",
+          "Click the white knight on c3 to see its available moves — notice it\n" +
+          "can jump straight to d5, settling on that permanent outpost!",
   },
   {
     category: 'Middlegame Strategy', icon: '🔄',
@@ -446,7 +448,7 @@ export const LESSONS: Lesson[] = [
     category: 'Middlegame Strategy', icon: '♟',
     title: 'Pawn Structure',
     fen: 'r1bqr1k1/pp3ppp/2p5/3p4/3P4/2PB4/PP3PPP/R1BQR1K1 w - - 0 1',
-    focus: 'd4', kind: 'explore',
+    focus: 'd3', kind: 'explore',
     desc: "Pawns cannot move backward — every pawn move is permanent. Your\n" +
           "pawn structure shapes the entire game and determines which plans\n" +
           "are available to each side.\n\n" +
@@ -462,7 +464,9 @@ export const LESSONS: Lesson[] = [
           "  • Pawn chain: pawns protecting each other diagonally. Attack\n" +
           "    the base of the chain to undermine it.\n\n" +
           "Think of your pawn structure as your long-term strategy — it tells\n" +
-          "you where to put your pieces and what plans to follow.",
+          "you where to put your pieces and what plans to follow.\n\n" +
+          "Click the bishop on d3 to see how the pawn structure shapes piece activity:\n" +
+          "notice how the locked d4/d5 pawns define which diagonals are open.",
   },
 
   // ── Endgame Strategy ────────────────────────────────────────────────────────
